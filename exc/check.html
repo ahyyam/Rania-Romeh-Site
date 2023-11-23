@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Checkout</title>
+    <link rel = "stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="pics/WhatsApp Image 2023-03-29 at 23.22.15.jpg">
+</head>
+<body>
+	<nav class="navbar">
+  <a href="home.html" class="brand"><img src="pics/Rania's logo.jpg" alt="Rania Romeh Jewellery"></a>
+  <ul class="nav-links">
+    <li><a href="home.html" class="active">Home</a></li>
+    <li><a href="product.html">Products</a></li>
+    <li><a href="contact us.html">Contact Us</a></li>
+    <li><a href="about us.html">About Us</a></li>
+    <li><a href="cart.html">Shopping Cart</a></li>
+  </ul>
+    <h1>Checkout</h1>
+	<form>
+		<label for="name">Name:</label>
+		<input type="text" id="name" name="name"><br><br>
+		<label for="email">Email:</label>
+		<input type="email" id="email" name="email"><br><br>
+		<label for="address">Address:</label>
+		<input type="text" id="address" name="address"><br><br>
+		<label for="city">City:</label>
+		<input type="text" id="city" name="city"><br><br>
+		<label for="state">State:</label>
+		<input type="text" id="state" name="state"><br><br>
+		<label for="zip">Zip Code:</label>
+		<input type="text" id="zip" name="zip"><br><br>
+		<button onclick="submitForm()">Submit</button>
+	</form>
+	<script>
+		// Function to submit form
+		function submitForm() {
+			var name = document.getElementById("name").value;
+			var email = document.getElementById("email").value;
+			var address = document.getElementById("address").value;
+			var city = document.getElementById("city").value;
+			var state = document.getElementById("state").value

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Shopping Cart</title>
+    <link rel = "stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="pics/WhatsApp Image 2023-03-29 at 23.22.15.jpg">
+</head>
+<body>
+	 <nav class="navbar">
+  <a href="home.html" class="brand"><img src="pics/Rania's logo.jpg" alt="Rania Romeh Jewellery"></a>
+  <ul class="nav-links">
+    <li><a href="home.html" class="active">Home</a></li>
+    <li><a href="product.html">Products</a></li>
+    <li><a href="contact us.html">Contact Us</a></li>
+    <li><a href="about us.html">About Us</a></li>
+        <li><a href="cart.html">Shopping Cart</a></li>
+      <li><a href="check.html">Checkout Page
+</a></li>
+  </ul>
+</nav>
+    <h1>Shopping Cart</h1>
+	<div id="cart">
+		<!-- Cart items will be dynamically added here -->
+	</div>
+	<button onclick="checkout()">Checkout</button>
+	<script>
+		// Array to store items in cart
+		var cartItems = [];
+
+		// Function to add item to cart
+		function addToCart(item) {
+			cartItems.push(item);
+			showCart();
+		}
+
+		// Function to remove item from cart
+		function removeFromCart(item) {
+			var index = cartItems.indexOf(item);
+			if (index !== -1) {
+				cartItems.splice(index, 1);
+			}
+			showCart();
+		}
+
+		// Function to show cart items
+		function showCart() {
+			var cartDiv = document.getElementById("cart");
+			cartDiv.innerHTML = "";
+			for (var i = 0; i < cartItems.length; i++) {
+				var itemDiv = document.createElement("div");
+				itemDiv.innerHTML = cartItems[i] + " <button onclick='removeFromCart(\"" + cartItems[i] + "\")'>Remove</button>";
+				cartDiv.appendChild(itemDiv);
+			}
+		}
+
+		// Initialize cart
+		showCart();
+	</script>
+</body>
+</html>
